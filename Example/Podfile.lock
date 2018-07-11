@@ -1,0 +1,22 @@
+PODS:
+  - LYSegmentViewController (1.0.5):
+    - Masonry
+  - Masonry (1.1.0)
+  - MJRefresh (3.1.15.3)
+
+DEPENDENCIES:
+  - LYSegmentViewController (from `../`)
+  - MJRefresh
+
+EXTERNAL SOURCES:
+  LYSegmentViewController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LYSegmentViewController: 9e634486c21758fefcb8b495fca0a7a8364835f9
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+
+PODFILE CHECKSUM: e97c11cc1450b8252291b95ba4e790d06fecb2e2
+
+COCOAPODS: 1.4.0.beta.2

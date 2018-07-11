@@ -1,0 +1,15 @@
+#use_frameworks!
+source 'http://192.168.10.81/IOS/commline/iOSPod.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+
+target 'LYSegmentViewController_Example' do
+  pod 'LYSegmentViewController', :path => '../'
+  pod 'MJRefresh'
+
+  target 'LYSegmentViewController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,9 @@
+# Pods
+Pods/
+*/**/*.xcworkspacedata
+
+# Xcode
+
+*/**/*.DS_Store
+*/**/xcuserdata
+
