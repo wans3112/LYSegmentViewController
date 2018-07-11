@@ -8,7 +8,7 @@ LYSegmentViewController是一个可以快速在UITableView/UICollactionView中�
 
 ######  带封面的segment控制器
 
-![design](http://192.168.10.81/IOS/commline/lysegmentviewcontroller/raw/59eaaaa1345d1c087cc819fab7e1bfb5e9f0dfcf/Example/LYSegmentViewController/segment_header.gif?private_token=JmGywVfg-_uAw-qzQ1rv "带封面的segment控制器")
+![design](https://github.com/wans3112/LYSegmentViewController/blob/master/Example/LYSegmentViewController/segment_header.gif?raw=true)
 
 - 主控制器
 
@@ -41,7 +41,7 @@ self.segmentHeaderDelegate = self;
  @return 数量
  */
 - (NSInteger)numberOfSegment {
-    
+
     return 3;
 }
 
@@ -52,10 +52,10 @@ self.segmentHeaderDelegate = self;
  @return 子控制器
  */
 - (LYSMSubBaseViewController *) controllerOfSegmentWithIndex:(NSInteger)index {
-    
+
     NSArray<NSString *> *classNames = @[@"LYHotArticleViewController", @"LYQuickConsultViewController", @"LYCaseAnalyseViewController"];
     LYSMSubBaseViewController *controller = [[NSClassFromString(classNames[index]) alloc] initWithTableViewStyle:UITableViewStyleGrouped];
-    
+
     return controller;
 }
 
@@ -66,9 +66,9 @@ self.segmentHeaderDelegate = self;
  @return 标题
  */
 - (NSString *)titleOfSegmentWithIndex:(NSInteger)index {
-    
+
     NSArray *titles = @[@"热门文章", @"快速咨询", @"案例分析"];
-    
+
     return titles[index];
 }
 
@@ -80,7 +80,7 @@ self.segmentHeaderDelegate = self;
  @return 高度
  */
 - (CGFloat)heightOfSegmentPageMenu {
-    
+
     return 40;
 }
 
@@ -90,7 +90,7 @@ self.segmentHeaderDelegate = self;
  @return 封面视图
  */
 - (UIView *)headerOfSegment {
-    
+
     return self.cycleView;
 }
 
@@ -128,7 +128,7 @@ self.tableView.delegate = self;
 
 ###### 置顶的segment控制器
 
-![design](http://192.168.10.81/IOS/commline/lysegmentviewcontroller/raw/59eaaaa1345d1c087cc819fab7e1bfb5e9f0dfcf/Example/LYSegmentViewController/segment_stick.gif?private_token=JmGywVfg-_uAw-qzQ1rv "置顶的segment控制器")
+![design](https://github.com/wans3112/LYSegmentViewController/blob/master/Example/LYSegmentViewController/segment_stick.gif?raw=true)
 
 - 主控制器
 
@@ -153,7 +153,7 @@ self.tableView.delegate = self;
 
 ###### 可自定义的segment控制器
 
-![design](http://192.168.10.81/IOS/commline/lysegmentviewcontroller/raw/59eaaaa1345d1c087cc819fab7e1bfb5e9f0dfcf/Example/LYSegmentViewController/segment_costom.gif?private_token=JmGywVfg-_uAw-qzQ1rv "可自定义的segment控制器")
+![design](https://github.com/wans3112/LYSegmentViewController/blob/master/Example/LYSegmentViewController/segment_costom.gif?raw=true)
 
 1、  主控制器继承自LYSegmentViewController
 
@@ -190,20 +190,20 @@ self.segmentDelegate = self;
 
 ```
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     UITableViewCell *maincell = nil;
     if ( indexPath.section == 2 ) {
         //TODO: 3.按需求配置参数生成SegmentCell
         UITableViewCell *segcell = [tableView dequeueReusableSegmentCellWithDelegate];
-        
+
         maincell = segcell;
     }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
         cell.textLabel.text = [indexPath description];
         maincell = cell;
-        
+
     }
-    
+
     return maincell;
 }
 ```
@@ -233,7 +233,7 @@ self.segmentDelegate = self;
 2、 子控制器添加下拉刷新，下拉刷新从子控制器列表的顶部开始下拉操作。
 
 
-![design](http://192.168.10.81/IOS/commline/lysegmentviewcontroller/raw/59eaaaa1345d1c087cc819fab7e1bfb5e9f0dfcf/Example/LYSegmentViewController/segment_subvc_pull.gif?private_token=JmGywVfg-_uAw-qzQ1rv "可自定义的segment控制器")
+![design](https://github.com/wans3112/LYSegmentViewController/blob/master/Example/LYSegmentViewController/segment_subvc_pull.gif?raw=true)
 
 > 这三种下拉刷新策略都可运用在以上三种segment控制器。
 
@@ -244,7 +244,7 @@ self.segmentDelegate = self;
 #pragma mark - LYSegmentDataSource
 
 - (LYSegmentPageMenuDictionary *)segmentPageMenuDictionary {
-    
+
     return @{@"selectedItemTitleColor":[UIColor colorWithHexString:@"00ccb1"],
              @"unSelectedItemTitleColor":[UIColor colorWithHexString:@"666666"],
              @"tracker.backgroundColor":[UIColor colorWithHexString:@"00ccb1"],
@@ -287,7 +287,7 @@ UITableViewCell *segcell = [tableView dequeueReusableSegmentCellWithAttributeDel
                                         @"unSelectedItemTitleColor":[UIColor LY_ColorWithHexString:@"666666"],
                                         @"tracker.backgroundColor":[UIColor LY_ColorWithHexString:@"00ccb1"],
                                         @"dividingLine.backgroundColor" : [UIColor clearColor]};
-    
+
     UITableViewCell *segcell = [tableView dequeueReusableCellWithAttribute:^(LYSAttribute *params) {
         params.attribute = attribute;
         params.pageMenuAttribute = pageMenuattribute;
