@@ -1,8 +1,9 @@
 //
 //  LYSegmentStickViewController.m
-//  LYSegmentStickViewController
+//  HomePage https://github.com/wans3112/LYSegmentViewController
 //
 //  Created by wans on 2017/12/21.
+//  Copyright © 2017年 wans,www.wans3112.cn All rights reserved.
 //
 
 #import "LYSegmentStickViewController.h"

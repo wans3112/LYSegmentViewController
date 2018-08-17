@@ -1,8 +1,9 @@
 //
 //  LYSeqmentConstants.h
-//  Pods
-//  常用常量
+//  HomePage https://github.com/wans3112/LYSegmentViewController
+//
 //  Created by wans on 2017/12/16.
+//  Copyright © 2017年 wans,www.wans3112.cn All rights reserved.
 //
 
 #ifndef LYSeqmentConstants_h

@@ -1,9 +1,10 @@
 //
 //  LYSMSubBaseViewController.m
-//  Pods
+//  HomePage https://github.com/wans3112/LYSegmentViewController
+//  segment子控制器的基类
 //
 //  Created by wans on 2017/12/18.
-//
+//  Copyright © 2017年 wans,www.wans3112.cn All rights reserved.
 //
 
 #import "LYSMSubBaseViewController.h"
