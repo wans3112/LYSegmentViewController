@@ -19,7 +19,11 @@
 
 - (LYSMSubBaseViewController *)subBaseViewController {
     
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wobjc-literal-conversion"
+    //写在这个中间的代码,都不会被编译器提示-Wdeprecated-declarations类型的警告
     return (LYSMSubBaseViewController *)LYSegSubViewController;
+#pragma clang diagnostic pop
 }
 
 @end

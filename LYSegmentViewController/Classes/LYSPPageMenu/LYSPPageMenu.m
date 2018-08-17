@@ -489,7 +489,7 @@
             lastButton = self.buttons[index-1];
         }
         // 先给给初始的origin，按钮将会从这个origin开始动画
-        button.frame = CGRectMake(CGRectGetMaxX(lastButton.frame)+_itemPadding*0.5, 0, 0, 0);
+        button.frame = CGRectMake(CGRectGetMaxX(lastButton.frame)+self->_itemPadding*0.5, 0, 0, 0);
         [UIView animateWithDuration:0.5 animations:^{
             [self setNeedsLayout];
             [self layoutIfNeeded];
@@ -513,7 +513,7 @@
 
 - (void)initialize {
     
-    _itemPadding = 30;
+    self->_itemPadding = 30;
     _itemTitleFont = [UIFont systemFontOfSize:16];
     _selectedItemTitleColor = [UIColor redColor];
     _unSelectedItemTitleColor = [UIColor blackColor];
@@ -761,7 +761,7 @@
         self.tracker.center = newCenter;
     } else {
         newCenter.x = fromButton.center.x + xDistance * progress;
-        newFrame.size.width = fromButton.frame.size.width + wDistance * progress + _itemPadding;
+        newFrame.size.width = fromButton.frame.size.width + wDistance * progress + self->_itemPadding;
         self.tracker.frame = newFrame;
         self.tracker.center = newCenter;
     }
@@ -882,7 +882,7 @@
 }
 
 - (void)setItemPadding:(CGFloat)itemPadding {
-    _itemPadding = itemPadding;
+    self->_itemPadding = itemPadding;
     [self setNeedsLayout];
     [self layoutIfNeeded];
     // 修正scrollView偏移
@@ -1029,7 +1029,7 @@
     for (int i= 0 ; i < self.buttons.count; i++) {
         LYSPItem *button = self.buttons[i];
         
-        CGFloat setupButtonW = [[self.setupWidths objectForKey:[NSString stringWithFormat:@"%zd",i]] floatValue];
+        CGFloat setupButtonW = [[self.setupWidths objectForKey:[NSString stringWithFormat:@"%d",i]] floatValue];
         CGFloat textW = [button.titleLabel.text boundingRectWithSize:CGSizeMake(MAXFLOAT, itemScrollViewH) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_itemTitleFont} context:nil].size.width;
         CGFloat imageW = button.currentImage.size.width;
         if (button.currentTitle && !button.currentImage) {
@@ -1056,32 +1056,32 @@
         if (self.permutationWay == LYSPPageMenuPermutationWayScrollAdaptContent) {
             buttonW = [buttonWidths[idx] floatValue];
             if (idx == 0) {
-                button.frame = CGRectMake(_itemPadding*0.5+lastButtonMaxX, 0, buttonW, itemScrollViewH);
+                button.frame = CGRectMake(self->_itemPadding*0.5+lastButtonMaxX, 0, buttonW, itemScrollViewH);
             } else {
-                button.frame = CGRectMake(_itemPadding+lastButtonMaxX, 0, buttonW, itemScrollViewH);
+                button.frame = CGRectMake(self->_itemPadding+lastButtonMaxX, 0, buttonW, itemScrollViewH);
 
             }
         } else if (self.permutationWay == LYSPPageMenuPermutationWayNotScrollEqualWidths) {
             // 求出外界设置的按钮宽度之和
             CGFloat totalSetupButtonW = [[self.setupWidths.allValues valueForKeyPath:@"@sum.floatValue"] floatValue];
             // 如果该按钮外界设置了宽，则取外界设置的，如果外界没设置，则其余按钮等宽
-            buttonW = setupButtonW ? setupButtonW : (itemScrollViewW-_itemPadding*(self.buttons.count)-totalSetupButtonW)/(self.buttons.count-self.setupWidths.count);
+            buttonW = setupButtonW ? setupButtonW : (itemScrollViewW-self->_itemPadding*(self.buttons.count)-totalSetupButtonW)/(self.buttons.count-self.setupWidths.count);
             if (buttonW < 0) { // 按钮过多时,有可能会为负数
                 buttonW = 0;
             }
             if (idx == 0) {
-                button.frame = CGRectMake(_itemPadding*0.5+lastButtonMaxX, 0, buttonW, itemScrollViewH);
+                button.frame = CGRectMake(self->_itemPadding*0.5+lastButtonMaxX, 0, buttonW, itemScrollViewH);
             } else {
-                button.frame = CGRectMake(_itemPadding+lastButtonMaxX, 0, buttonW, itemScrollViewH);
+                button.frame = CGRectMake(self->_itemPadding+lastButtonMaxX, 0, buttonW, itemScrollViewH);
             }
             
         } else {
-            _itemPadding = diff/self.buttons.count;
+            self->_itemPadding = diff/self.buttons.count;
             buttonW = [buttonWidths[idx] floatValue];
             if (idx == 0) {
-                button.frame = CGRectMake(_itemPadding*0.5+lastButtonMaxX, 0, buttonW, itemScrollViewH);
+                button.frame = CGRectMake(self->_itemPadding*0.5+lastButtonMaxX, 0, buttonW, itemScrollViewH);
             } else {
-                button.frame = CGRectMake(_itemPadding+lastButtonMaxX, 0, buttonW, itemScrollViewH);
+                button.frame = CGRectMake(self->_itemPadding+lastButtonMaxX, 0, buttonW, itemScrollViewH);
             }
         }
         lastButtonMaxX = CGRectGetMaxX(button.frame);
@@ -1089,7 +1089,7 @@
     
     [self resetSetupTrackerFrameWithSelectedButton:self.selectedButton];
     
-    self.itemScrollView.contentSize = CGSizeMake(lastButtonMaxX+_itemPadding*0.5, 0);
+    self.itemScrollView.contentSize = CGSizeMake(lastButtonMaxX+self->_itemPadding*0.5, 0);
     
     if (self.translatesAutoresizingMaskIntoConstraints == NO) {
         [self moveItemScrollViewWithSelectedButton:self.selectedButton];
@@ -1117,7 +1117,7 @@
             break;
         case LYSPPageMenuTrackerStyleLineLongerThanItem:
         {
-            trackerW = selectedButtonWidth+(selectedButtonWidth ? _itemPadding : 0);
+            trackerW = selectedButtonWidth+(selectedButtonWidth ? self->_itemPadding : 0);
             trackerH = _trackerHeight;
             trackerX = selectedButton.frame.origin.x;
             trackerY = self.itemScrollView.bounds.size.height - trackerH;
@@ -1135,7 +1135,7 @@
             break;
         case LYSPPageMenuTrackerStyleRect:
         {
-            trackerW = selectedButtonWidth+(selectedButtonWidth ? _itemPadding : 0);
+            trackerW = selectedButtonWidth+(selectedButtonWidth ? self->_itemPadding : 0);
             trackerH = selectedButton.frame.size.height;
             trackerX = selectedButton.frame.origin.x;
             trackerY = 0;
