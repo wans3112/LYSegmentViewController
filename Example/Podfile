@@ -1,5 +1,4 @@
 #use_frameworks!
-source 'http://192.168.10.81/IOS/commline/iOSPod.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 

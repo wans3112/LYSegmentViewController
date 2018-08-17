@@ -8,15 +8,20 @@ DEPENDENCIES:
   - LYSegmentViewController (from `../`)
   - MJRefresh
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - MJRefresh
+
 EXTERNAL SOURCES:
   LYSegmentViewController:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  LYSegmentViewController: 9e634486c21758fefcb8b495fca0a7a8364835f9
+  LYSegmentViewController: 2233a9abd08d5e43f000820f68560f86eb394668
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
 
-PODFILE CHECKSUM: e97c11cc1450b8252291b95ba4e790d06fecb2e2
+PODFILE CHECKSUM: 87e9db1a85a4707bd2216cff0974b0229dccc239
 
-COCOAPODS: 1.4.0.beta.2
+COCOAPODS: 1.5.3

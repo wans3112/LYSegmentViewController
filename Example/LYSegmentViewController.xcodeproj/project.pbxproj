@@ -260,7 +260,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				2E0DF8FBED32368E25B35C95 /* [CP] Embed Pods Frameworks */,
 				B57C8BCD7D181C4764A84DAD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -280,8 +279,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				7222B826C3EDB1127016CDF1 /* [CP] Embed Pods Frameworks */,
-				75EA3088DCE259CA9251D797 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,51 +355,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E0DF8FBED32368E25B35C95 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYSegmentViewController_Example/Pods-LYSegmentViewController_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7222B826C3EDB1127016CDF1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYSegmentViewController_Tests/Pods-LYSegmentViewController_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		75EA3088DCE259CA9251D797 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYSegmentViewController_Tests/Pods-LYSegmentViewController_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B2B06163B4ECFE508E4CBB97 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,7 +384,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
