@@ -1,12 +1,19 @@
-### LYSegmentViewController
+# LYSegmentViewController
 
-[![Version](https://img.shields.io/cocoapods/v/LYEmptySet.svg?style=flat)](http://192.168.10.81/IOS/commline/LYSegmentViewController)
-[![License](https://img.shields.io/cocoapods/l/LYEmptySet.svg?style=flat)](http://192.168.10.81/IOS/commline/LYSegmentViewController)
-[![Platform](https://img.shields.io/cocoapods/p/LYEmptySet.svg?style=flat)](http://192.168.10.81/IOS/commline/LYSegmentViewController)
+[![CI Status](https://img.shields.io/travis/wans3112/LYSegmentViewController.svg?style=flat)](https://travis-ci.org/wans3112/LYSegmentViewController)
+[![Version](https://img.shields.io/cocoapods/v/LYSegmentViewController.svg?style=flat)](https://cocoapods.org/pods/LYSegmentViewController)
+[![License](https://img.shields.io/cocoapods/l/LYSegmentViewController.svg?style=flat)](https://cocoapods.org/pods/LYSegmentViewController)
+[![Platform](https://img.shields.io/cocoapods/p/LYSegmentViewController.svg?style=flat)](https://cocoapods.org/pods/LYSegmentViewController)
 
 LYSegmentViewController是一个可以快速在UITableView/UICollactionView中集成segment分页控制器。主要包含一下三种风格。
 
-######  带封面的segment控制器
+### 安装
+
+```ruby
+pod 'LYSegmentViewController'
+```
+
+###  1.带封面的segment控制器
 
 ![design](https://github.com/wans3112/LYSegmentViewController/blob/master/Example/LYSegmentViewController/segment_header.gif?raw=true)
 
@@ -126,7 +133,7 @@ self.tableView.delegate = self;
 
 > 主控制器添加下拉刷新，刷新子控制器内容时，子控制器网络请求完成，收起下拉刷新调用父类的`[self endRefreshing]`即可。
 
-###### 置顶的segment控制器
+### 2.置顶的segment控制器
 
 ![design](https://github.com/wans3112/LYSegmentViewController/blob/master/Example/LYSegmentViewController/segment_stick.gif?raw=true)
 
@@ -151,7 +158,7 @@ self.tableView.delegate = self;
 2、   将父控制器(LYSMSubBaseViewController)的tableview的dataSource和delegate代理设置为子类。`同上`
 
 
-###### 可自定义的segment控制器
+### 3.可自定义的segment控制器
 
 ![design](https://github.com/wans3112/LYSegmentViewController/blob/master/Example/LYSegmentViewController/segment_costom.gif?raw=true)
 
