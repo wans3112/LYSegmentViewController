@@ -1,12 +1,12 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LYSegmentViewController'
-  s.version          = '1.0.5'
-  s.summary          = 'A short description of LYSegmentViewController.'
-  s.homepage         = 'http://192.168.10.81/IOS/commline/LYSegmentViewController'
+  s.version          = '1.0.0'
+  s.summary          = '一个快速继承UITableView嵌套滑动的控件'
+  s.homepage         = 'https://github.com/wans3112/LYSegmentViewController'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wans3112' => 'wanslm@foxmail.com' }
-  s.source           = { :git => 'http://192.168.10.81/IOS/commline/LYSegmentViewController.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/wans3112/LYSegmentViewController.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
   s.source_files = 'LYSegmentViewController/Classes/**/*'

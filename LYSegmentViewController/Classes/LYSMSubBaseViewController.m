@@ -7,7 +7,6 @@
 //
 
 #import "LYSMSubBaseViewController.h"
-#import <MJRefresh/MJRefresh.h>
 
 @interface LYSMSubBaseViewController ()
 
@@ -95,7 +94,7 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    // 添加下拉刷新
+    /** 添加下拉刷新
     if ( self.refreshingPolicy == LYSementRefrshingPolicyChild ) {
         __weak typeof(self) weakSelf = self;
         self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -103,6 +102,7 @@
             [strongWeak loadData];
         }];
     }
+     **/
     
 }
 

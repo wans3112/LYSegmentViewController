@@ -22,7 +22,7 @@
     self.view.backgroundColor = LYSegColorHexString(@"f2f2f2");
 
     self.segmentDataSource = self;
-    self.segmentScrollDisable = YES;
+//    self.segmentScrollDisable = YES;
     
     [self.tableView setEstimatedRowHeight:10];
 

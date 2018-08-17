@@ -1,5 +1,5 @@
 PODS:
-  - LYSegmentViewController (1.0.5):
+  - LYSegmentViewController (1.0.0):
     - Masonry
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LYSegmentViewController: 2233a9abd08d5e43f000820f68560f86eb394668
+  LYSegmentViewController: 0768d5ccaee8f1d7ff271f825c57df42c37fa993
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
 
