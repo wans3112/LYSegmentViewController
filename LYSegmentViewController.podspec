@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LYSegmentViewController'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '一个快速继承UITableView嵌套滑动的控件'
   s.homepage         = 'https://github.com/wans3112/LYSegmentViewController'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
