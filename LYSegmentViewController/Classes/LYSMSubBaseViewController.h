@@ -22,6 +22,8 @@
 
 @property (nonatomic, assign) NSInteger                              segmentIndex; //!< 在segment控制器中的序号
 
+@property (nonatomic, assign) BOOL                                   isShowIndicator; //!< 是否显示主列表滑动条
+
 @property (nonatomic, strong, readonly) id                           params; //!< 传递的参数
 
 /**

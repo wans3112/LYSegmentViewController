@@ -48,7 +48,7 @@ static const void *LYTVSegmentCellKey = &LYTVSegmentCellKey;
         [self.contentView addSubview:self.segmentView];
         [self.segmentView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.right.left.bottom.mas_equalTo(0);
-            make.height.mas_equalTo(kLYSegmentCellHeight(reuseIdentifier));
+            make.height.mas_equalTo(kLYSegmentCellHeight(reuseIdentifier)).priorityHigh();
         }];
     }
     return self;

@@ -301,7 +301,8 @@
 				ORGANIZATIONNAME = wans3112;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = G7F7GRCFUG;
+						DevelopmentTeam = S8SDGNL65A;
+						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -379,7 +380,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LYSegmentViewController_Example/Pods-LYSegmentViewController_Example-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LYSegmentViewController_Example/Pods-LYSegmentViewController_Example-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -388,7 +389,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYSegmentViewController_Example/Pods-LYSegmentViewController_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LYSegmentViewController_Example/Pods-LYSegmentViewController_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F71841CDE5B79D62673B7B0E /* [CP] Check Pods Manifest.lock */ = {
@@ -576,13 +577,15 @@
 			baseConfigurationReference = B395C9456A34C4469877ED0E /* Pods-LYSegmentViewController_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G7F7GRCFUG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = S8SDGNL65A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LYSegmentViewController/LYSegmentViewController-Prefix.pch";
 				INFOPLIST_FILE = "LYSegmentViewController/LYSegmentViewController-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.zhiniaoT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = com.pingan.zhiniaoT_dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -592,13 +595,15 @@
 			baseConfigurationReference = C99C205F15C015B82BB6287D /* Pods-LYSegmentViewController_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G7F7GRCFUG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LYSegmentViewController/LYSegmentViewController-Prefix.pch";
 				INFOPLIST_FILE = "LYSegmentViewController/LYSegmentViewController-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.zhiniaoT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

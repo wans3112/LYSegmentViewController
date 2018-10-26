@@ -244,6 +244,8 @@
     
     self.insert = NO;
     
+    [self removeAllItems];
+    
     for (int i = 0; i < items.count; i++) {
         id object = items[i];
         
@@ -1054,7 +1056,7 @@
     [self.buttons enumerateObjectsUsingBlock:^(LYSPItem *button, NSUInteger idx, BOOL * _Nonnull stop) {
         CGFloat setupButtonW = [[self.setupWidths objectForKey:[NSString stringWithFormat:@"%zd",idx]] floatValue];
         if (self.permutationWay == LYSPPageMenuPermutationWayScrollAdaptContent) {
-            buttonW = [buttonWidths[idx] floatValue];
+            buttonW = self.itemWidth ?: [buttonWidths[idx] floatValue];
             if (idx == 0) {
                 button.frame = CGRectMake(self->_itemPadding*0.5+lastButtonMaxX, 0, buttonW, itemScrollViewH);
             } else {
@@ -1126,7 +1128,7 @@
             break;
         case LYSPPageMenuTrackerStyleLineAttachment:
         {
-            trackerW = selectedButtonWidth ? selectedButton.titleLabel.font.pointSize : 0; // 固定宽度为字体大小
+            trackerW = selectedButtonWidth ? self.trackerWidth : 0; // 固定宽度为字体大小
             trackerH = _trackerHeight;
             trackerX = selectedButton.frame.origin.x;
             trackerY = self.itemScrollView.bounds.size.height - trackerH;

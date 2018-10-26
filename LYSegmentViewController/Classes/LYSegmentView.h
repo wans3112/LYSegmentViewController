@@ -27,4 +27,6 @@
 - (void)refreshCurrentSubControllerWithComplete:(void(^)(id))complete;
 - (void)refreshCurrentSubController;
 
+- (LYSMSubBaseViewController *)childViewControllerWithIndex:(NSInteger)index;
+
 @end

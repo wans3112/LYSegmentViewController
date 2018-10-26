@@ -41,4 +41,6 @@ typedef void(^LYSegmentParams)(LYSAttribute *params);
 - (void)refreshCurrentSubControllerWithComplete:(void(^)(id))complete;
 - (void)refreshCurrentSubController;
 
+- (UIViewController *)childViewControllerWithIndex:(NSInteger)index;
+
 @end

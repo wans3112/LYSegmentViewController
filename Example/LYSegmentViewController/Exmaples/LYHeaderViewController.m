@@ -25,8 +25,9 @@
     
     self.segmentHeaderDelegate = self;
     self.segmentDataSource = self;
+//    self.tableView.scrollEnabled = NO;
     
-//    self.refreshingPolicy = LYSementRefrshingPolicyMain;
+    self.refreshingPolicy = LYSementRefrshingPolicyMain;
 //
 //    @weakify(self)
 //    [self.tableView ly_addHeaderRefresh:^{
@@ -96,7 +97,7 @@
     UIImageView *header = [[UIImageView alloc] init];
 //    header.backgroundColor = UIColor.yellowColor;
     header.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 200);
-    header.image = [UIImage imageNamed:@"cover.jpg"];
+    header.image = [UIImage imageNamed:@"cover"];
     
     return header;
 }

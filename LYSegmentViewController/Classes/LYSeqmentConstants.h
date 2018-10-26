@@ -59,7 +59,7 @@ typedef enum : NSUInteger {
                 viewController = (UIViewController *)nextResponder; \
                 break; \
             } \
-            if ( !className && [nextResponder isKindOfClass:[UIViewController class]]) { \
+            if ( !className && [nextResponder isKindOfClass:NSClassFromString(kClassNameSegmentViewController)]) { \
                 viewController = (UIViewController *)nextResponder; \
                 break; \
             } \
@@ -92,7 +92,6 @@ typedef enum : NSUInteger {
 #undef  LYSegColorHexString
 #define LYSegColorHexString( hexString ) \
 ({ \
-    NSLog(@"%@:hexString exist",hexString); \
     UIColor *tempColor = nil; \
     UIColor *hexColor = nil; \
     NSString *cString = [[hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString]; \

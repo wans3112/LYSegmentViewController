@@ -117,12 +117,12 @@
         NSString *canScroll = userInfo[@"canScroll"];
         if ([canScroll isEqualToString:@"1"]) {
             self.canScroll = YES;
-            self.tableView.showsVerticalScrollIndicator = YES;
+            if( self.isShowIndicator ) self.tableView.showsVerticalScrollIndicator = YES;
         }
     }else if([notificationName isEqualToString:LYSLeaveTopNotificationName]){
         self.tableView.contentOffset = CGPointZero;
         self.canScroll = NO;
-        self.tableView.showsVerticalScrollIndicator = NO;
+        if( self.isShowIndicator ) self.tableView.showsVerticalScrollIndicator = NO;
     }
 }
 

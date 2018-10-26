@@ -182,7 +182,9 @@
 - (UITableView *)tableView {
     if( !_tableView ) {
         _tableView = [[LYSegmentTableView alloc] initWithFrame:CGRectZero style:self.style];
-        [_tableView setBackgroundColor:UIColor.clearColor];
+        _tableView.backgroundColor = UIColor.clearColor;
+        _tableView.estimatedRowHeight = 100;
+        _tableView.rowHeight = UITableViewAutomaticDimension;
     }
     return _tableView;
 }

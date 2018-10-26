@@ -122,14 +122,15 @@
 
 - (void)pageMenu:(LYSPPageMenu *)pageMenu itemSelectedFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
     
-    LYSMSubBaseViewController *controller = self.segmentViewController.childViewControllers[toIndex];
+    LYSMSubBaseViewController *fromcontroller = self.segmentViewController.childViewControllers[fromIndex];
+    LYSMSubBaseViewController *tocontroller = self.segmentViewController.childViewControllers[toIndex];
     // 如果已经加载过，就不再加载
-    if ( controller && ![controller isViewLoaded] && ![self.containerView.subviews containsObject:controller.view]) {
+    if ( tocontroller && ![tocontroller isViewLoaded] && ![self.containerView.subviews containsObject:tocontroller.view]) {
         
-        controller.view.tag = toIndex;
-        [self.containerView addSubview:controller.view];
-        [controller didMoveToParentViewController:self.segmentViewController];
-        [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        tocontroller.view.tag = toIndex;
+        [self.containerView addSubview:tocontroller.view];
+        [tocontroller didMoveToParentViewController:self.segmentViewController];
+        [tocontroller.view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.mas_equalTo(0);
             make.width.equalTo(self);
             make.left.mas_equalTo(toIndex * CGRectGetWidth(self.frame));
@@ -137,6 +138,9 @@
     }
     
     [self.containerView layoutIfNeeded];
+    
+    [fromcontroller viewWillDisappear:YES];
+    [tocontroller viewWillAppear:YES];
     
     CGPoint offsetPoint = CGPointMake(CGRectGetWidth(self.frame) * toIndex, 0);
     if ( abs((int)(toIndex - fromIndex)) > 1 ) {
@@ -149,6 +153,9 @@
         [self.scrollView setContentOffset:offsetPoint animated:YES];
     }
     
+    [tocontroller viewDidAppear:YES];
+    [fromcontroller viewDidDisappear:YES];
+
     self.currentIndex = toIndex;
     
     [self.segmentViewController setValue:@(toIndex) forKey:@"currentIndex"];
@@ -156,7 +163,7 @@
     // 分页点击回调
     id<LYSegmentDelegate> delegate = self.segmentViewController.segmentDelegate;
     if ( delegate && [delegate respondsToSelector:@selector(segmentController:didSelectedWithIndex:)]) {
-        [delegate segmentController:controller didSelectedWithIndex:self.currentIndex];
+        [delegate segmentController:tocontroller didSelectedWithIndex:self.currentIndex];
     }
 }
 
@@ -170,16 +177,25 @@
 
 - (void)refreshCurrentSubController {
     
-    LYSMSubBaseViewController *controller = self.segmentViewController.childViewControllers[self.currentIndex];
-    
+    LYSMSubBaseViewController *controller = [self childViewControllerWithIndex:self.currentIndex];
+
     [controller loadData];
 }
 
 - (void)refreshCurrentSubControllerWithComplete:(void (^)(id))complete {
     
-    LYSMSubBaseViewController *controller = self.segmentViewController.childViewControllers[self.currentIndex];
+    LYSMSubBaseViewController *controller = [self childViewControllerWithIndex:self.currentIndex];
     
     [controller loadDataWithComplete:complete];
+}
+
+- (LYSMSubBaseViewController *)childViewControllerWithIndex:(NSInteger)index {
+    
+    if ( index < self.segmentViewController.childViewControllers.count ) {
+        return self.segmentViewController.childViewControllers[index];
+    }
+    
+    return nil;
 }
 
 #pragma mark - Getter&&Setter
@@ -280,12 +296,19 @@
 - (void)setSelectedIndex:(NSInteger)selectedIndex {
     
     if ( selectedIndex >= self.pageTitles.count ) {
-        NSLog(@"selectedIndex：%ld is invaild",selectedIndex);
+//        NSLog(@"selectedIndex：%ld is invaild",selectedIndex);
         return;
     }
     
     _selectedIndex = selectedIndex;
     [self.pageMenu setSelectedItemIndex:_selectedIndex];
+}
+
+- (void)setPageTitles:(NSArray<NSString *> *)pageTitles {
+
+    _pageTitles = pageTitles;
+
+    [self.pageMenu setItems:_pageTitles selectedItemIndex:self.currentIndex];
 }
 
 @end

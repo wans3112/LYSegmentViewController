@@ -76,6 +76,9 @@ typedef NS_ENUM(NSInteger, LYSPItemImagePosition) {
 @property (nonatomic, assign) BOOL showFuntionButton;
 /** item之间的间距,当permutationWay为‘LYSPPageMenuPermutationWayNotScrollAdaptContent’时此属性无效 */
 @property (nonatomic, assign) CGFloat itemPadding;
+/** item之间的宽度 */
+@property (nonatomic, assign) CGFloat itemWidth;
+
 /** item的标题字体 */
 @property (nonnull, nonatomic, strong) UIFont *itemTitleFont;
 /** 选中的item标题颜色 */
@@ -86,6 +89,9 @@ typedef NS_ENUM(NSInteger, LYSPItemImagePosition) {
 @property (nonatomic, readonly) UIImageView *tracker;
 /** 跟踪器的高度 */
 @property (nonatomic, assign) CGFloat trackerHeight;
+/** 跟踪器的宽度 */
+@property (nonatomic, assign) CGFloat trackerWidth;
+
 /** 跟踪器的样式 */
 @property (nonatomic, assign, readonly) LYSPPageMenuTrackerStyle trackerStyle;
 /** 分割线 */

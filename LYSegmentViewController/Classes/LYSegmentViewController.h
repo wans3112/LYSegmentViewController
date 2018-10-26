@@ -28,6 +28,11 @@
 
 @property (nonatomic, assign) BOOL                                             segmentScrollDisable; //!< 禁止segment横向滑动
 
+@property (nonatomic, strong, readonly) LYSMSubBaseViewController              *firstChildViewController; //!< 第一个子控制器
+
+@property (nonatomic, strong, readonly) LYSMSubBaseViewController              *lastChildViewController; //!< 最后一个子控制器
+
+- (void)reloadData;
 /**
  初始化实例
 
@@ -45,5 +50,10 @@
 
 // 主控制器调用收起下拉刷新
 - (void)endRefreshing;
+
+// 根据index获取子视图
+- (LYSMSubBaseViewController *)childViewControllerWithIndex:(NSInteger)index;
+
+- (void)reloadDataForTabs;
 
 @end
